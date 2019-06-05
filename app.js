@@ -5,10 +5,14 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
 const app = express()
-const port = process.env.PORT || 3000
+var port = process.env.PORT || 3000
 console.log(__dirname)
-app.use(express.static('C:/Users/BRADVerrier/Node-Course/web-server/public/'))
+
+const publicDirectoryPath = path.join(__dirname, '/public')
+
+app.use(express.static(publicDirectoryPath))
 hbs.registerPartials('C:/Users/BRADVerrier/Node-Course/web-server/partials/')
+
 app.set('view engine', 'hbs')
 
 app.get('', (req, res) => {
