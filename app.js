@@ -9,10 +9,11 @@ var port = process.env.PORT || 3000
 console.log(__dirname)
 
 const publicDirectoryPath = path.join(__dirname, '/public')
-
+const partialsPath = path.join(__dirname, '/partials')
+const viewspath = path.join(__dirname, '/views')
 app.use(express.static(publicDirectoryPath))
-hbs.registerPartials('C:/Users/BRADVerrier/Node-Course/web-server/partials/')
-
+hbs.registerPartials(partialsPath)
+app.set('views', viewspath)
 app.set('view engine', 'hbs')
 
 app.get('', (req, res) => {
