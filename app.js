@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
 const app = express()
+const port = process.env.PORT || 3000
 console.log(__dirname)
 app.use(express.static('C:/Users/BRADVerrier/Node-Course/web-server/public/'))
 hbs.registerPartials('C:/Users/BRADVerrier/Node-Course/web-server/partials/')
@@ -73,6 +74,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port' + port)
 })

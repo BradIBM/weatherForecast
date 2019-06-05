@@ -5,7 +5,7 @@ const par2 = document.querySelector('#p2')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const local = searchBar.value
-    fetch('http://localhost:3000/weather?address=' + local).then((response) => {
+    fetch('/weather?address=' + local).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 par1.textContent = data.error
