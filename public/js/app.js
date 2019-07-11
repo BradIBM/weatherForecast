@@ -8,10 +8,11 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?address=' + local).then((response) => {
         response.json().then((data) => {
             if(data.error){
-                par1.textContent = data.error
+                par1.textContent = data.errorg
                 par2.textContent = ""
             }
             else{
+                
                 console.log(data)
                 par1.textContent = data.address
                 par2.textContent = data.weather

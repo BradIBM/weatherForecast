@@ -1,0 +1,11 @@
+1. APIC (2018)
+2. Kubernetes
+3. Data Power
+4. Openshift (Redhat)
+5. IBM Cloud platform
+
+Cloud Native
+
+Portal URL: https://sb-bverrieribmcom-dev.developer.us.apiconnect.ibmcloud.com
+ThinkIBM Consumer Secret: sR4cY7jH5lU8nQ8bI4uE2aN8pG1pY7xD6iL8jF3wG1uD4tO5kE
+ThinkIBM Consumer Client ID: 81ac821a-6601-42df-a053-3302e4b1090e
