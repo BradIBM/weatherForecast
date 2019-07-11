@@ -63,6 +63,31 @@ app.get('/weather', (req, res) => {
     })
 })
 
+app.get('/precip', (req, res) => {
+    if(!req.query.address){
+        return res.send({
+            error: 'You must provide a search term'
+        })
+    }
+
+    geocode(req.query.address, (error, data) => {
+        console.log( 'Error', error)
+        if(error){
+            return res.send({error})
+        }
+        precip(data.latitude, data.longitude, (error, info) => {
+            console.log( 'Error', error)
+            if(error){
+                return res.send({error})
+            }
+            res.send({
+                precipitation: info,
+                address: data.location
+            })
+        })
+    })
+})
+
 app.get('/help*', (req, res) => {
     res.render('404', {
         title: '404',
